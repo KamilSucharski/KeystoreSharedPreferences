@@ -12,6 +12,7 @@ android {
 
         versionName String.format("%s.%s.%s", version_major, version_minor, version_patch)
         versionCode version_major * 1000000 + version_minor * 1000 + version_patch
+        project.archivesBaseName = "keystoresharedpreferences-${versionName}".toString()
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }

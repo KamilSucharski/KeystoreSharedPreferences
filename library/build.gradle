@@ -1,0 +1,32 @@
+apply plugin: 'com.android.library'
+
+android {
+    defaultConfig {
+        minSdkVersion project.ANDROID_VERSION_MINIMAL.toInteger()
+        compileSdkVersion project.ANDROID_VERSION_TARGET.toInteger()
+        targetSdkVersion project.ANDROID_VERSION_TARGET.toInteger()
+
+        def version_major = project.VERSION_MAJOR.toInteger()
+        def version_minor = project.VERSION_MINOR.toInteger()
+        def version_patch = project.VERSION_PATCH.toInteger()
+
+        versionName String.format("%s.%s.%s", version_major, version_minor, version_patch)
+        versionCode version_major * 1000000 + version_minor * 1000 + version_patch
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')
+        }
+    }
+
+
+    dependencies {
+        testImplementation 'junit:junit:4.12'
+        androidTestImplementation 'com.android.support.test:runner:1.0.2'
+        androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    }
+}

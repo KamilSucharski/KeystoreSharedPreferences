@@ -29,7 +29,7 @@ sharedPreferences
     .commit();
 ```
 
-3. Is you inspect your Shared Preferences file it will look something like this:
+3. If you inspect your Shared Preferences file it will look something like this:
 ```xml
 <?xml version='1.0' encoding='utf-8' standalone='yes' ?>
 <map>
